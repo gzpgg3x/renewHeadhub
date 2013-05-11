@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import patterns, include, url
+from django.conf.urls import patterns, include, url
 
 urlpatterns = patterns('',
     url(r'^$', 'People.views.shout'),
@@ -10,8 +10,10 @@ urlpatterns = patterns('',
     #url(r'^api/People/get$', 'People.api.get_shouts'),
     #url(r'^api/shouts/new$', 'shouts.api.new_shout'),
     #url(r'^api/shouts/get$', 'shouts.api.get_shouts'),
-    #url(r'^api/shouts/new$', 'People.api.new_shout'),
-    #url(r'^api/shouts/get$', 'People.api.get_shouts'),
+    # url(r'^api/shouts/new$', 'People.api.new_shout'),
+    # url(r'^api/shouts/get$', 'People.api.get_shouts'),
     url(r'^api/People/new$', 'People.api.new_shout'),
     url(r'^api/People/get$', 'People.api.get_People'), 
+    url(r'^api/shouts/new$', 'People.api.new_shout'),
+    url(r'^api/shouts/get$', 'People.api.get_People'),    
 )

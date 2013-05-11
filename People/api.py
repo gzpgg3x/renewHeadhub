@@ -33,10 +33,10 @@ def new_shout(request):
     author = request.POST['author']
     message = request.POST['message']
     keywords = request.POST['keywords']
-    #print keywords
-    kw = keywords.replace(" ", "%20")
-    kw = kw.replace('"', "%22")
-    print kw
+    print keywords
+    # kw = keywords.replace(" ", "%20")
+    # kw = kw.replace('"', "%22")
+    # print kw
 
     zip="10001"
     address = ""
@@ -51,7 +51,7 @@ def new_shout(request):
     for page in range(1):
 
         pageStr = str(page)
-        ddd = 'http://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp?search_text='+kw+'&sort=Date&formType=Form8K&isAdv=true&stemming=true&numResults=100&fromDate=' + d + '&toDate=' + dd + '&numResults=100' 
+        ddd = 'http://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp?search_text='+keywords+'&sort=Date&formType=Form8K&isAdv=true&stemming=true&numResults=100&fromDate=' + d + '&toDate=' + dd + '&numResults=100' 
         #ddd = 'http://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp?search_text=%22item%205.02%22&sort=Date&formType=Form8K&isAdv=true&stemming=true&numResults=100&fromDate=' + d + '&toDate=' + d + '&numResults=100'
         #ddd='http://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp?search_text=%22item+5.02%22&startDoc=' + pageStr + '01&numResults=50&isAdv=true&stemming=true&sort=Date&formType=Form8K&fromDate=' + d + '&toDate=' + dd
         responser=get_url_content(ddd)

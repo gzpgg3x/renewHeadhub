@@ -49,6 +49,7 @@ function shout_init() {
     var author = $("#author");
     var message = $("#message");
     var keywords = $("#keywords");
+    alert(message);
     if (!author.val()) {
       form_error(author, "Please enter Author!");
       return false;
